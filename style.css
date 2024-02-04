@@ -1,34 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300;1,400&family=Rubik:wght@300;400;500;600&family=Sora&family=Ubuntu:ital,wght@0,400;0,500;1,300;1,400&display=swap');
 
+* {
+    text-decoration-line: none;
+}
+
+
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
     width: 100%;
     font-family: 'Rubik', sans-serif;
-    min-width: 650px;
+    overflow: auto;
 }
 
 /* Header */
+#header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
 
 nav {
     width: 100%;
     top: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     position: fixed;
     background-color: rgb(0, 0, 0);
-    height: 130px;
     font-size: 20px;
     z-index: 1;
     
 }
 
-nav h4 a{
+nav h4{
+    position: absolute;
+    left: 3rem;
+}
+
+nav h4 a {
     color: white;
-    margin: 20%;
-    text-decoration-line: none;
     font-family: 'Poppins', sans-serif;
 
 }
@@ -57,7 +69,7 @@ nav ul li a:hover {
 }
 
 
-nav button {
+nav .menu-button {
     font-family: 'Poppins', sans-serif;
 
 }
@@ -71,10 +83,10 @@ main {
     text-align: right;
     justify-content: center;
     flex-direction: column;
-    gap: 10rem;
+    gap: 15rem;
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
-    margin: 10%;
+    margin: 10rem;
 }
 
 @keyframes fadeIn {
@@ -94,18 +106,65 @@ main ul {
     list-style: none;
 }
 
-section{
+section {
     font-weight: 500;
     font-size: 24px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    
 }
 
 img {
     border-radius: 20%;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
 }
+
+/* Contact page */
+
+form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(to bottom, rgba(199, 193, 193, 0.974), rgba(183, 158, 158, 0.9));
+    border-radius: 5%;
+    padding: 5%;
+    margin: 6rem;
+    
+}
+
+form input{
+    text-align: right;
+    text-decoration: none;
+    border: 1px solid;
+    border-radius: 3px;
+    margin-bottom: 5%;
+
+}
+
+form button{
+    border: 0;
+    width: 40%;
+    height: 40px;
+    cursor: pointer;
+    background-color: rgb(19, 86, 109);
+    color: white;
+    font-weight: 400;
+    font-size: large;
+    border-radius: 10%;
+}
+
+select{
+    text-align: right;
+}
+
+
+
+/* /Contact page */
+
+
 
 /* /Main Content */
 
@@ -122,4 +181,61 @@ footer {
     width: 100%;
     height: 200px;
     background: linear-gradient(to bottom, rgba(249, 249, 249, 0.974), rgba(221, 184, 184, 0.9));
+}
+
+footer a , #ContactPage{
+    color: black;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-family: 'Rubik', sans-serif;
+
+}
+
+footer a:hover #ContactPage{
+    color: rgb(248, 9, 9);
+
+}
+
+/* Media query for screens with a width between 769 pixels and 870 pixels */
+@media only screen and (max-width: 870px){
+    nav {
+        font-size: 18px;
+        /* Other styles for screens between 769px and 870px wide */
+    }
+
+    nav h4{
+        left: 2rem;
+    }
+
+    section{
+        font-size: 10px;
+        text-wrap:nowrap;
+    }
+}
+@media only screen and (max-width: 660px) {
+    /* Style to hide the specific nav item */
+    .Hide-640px {
+        display: none;
+
+    }
+
+    /* Other styles for screens up to 680px wide if needed */
+}
+@media only screen and (max-width: 740px) {
+    /* Style to hide the specific nav item */
+    .Hide-680px {
+        display: none;
+    }
+
+    /* Other styles for screens up to 680px wide if needed */
+}
+
+
+@media only screen and (max-width: 740px) {
+    /* Style to hide the specific nav item */
+    .Hide-680px {
+        display: none;
+    }
+
+    /* Other styles for screens up to 680px wide if needed */
 }
